@@ -1,100 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom YouTube Video Controls</title>
-  <style>
-    #videoContainer {
-      position: relative;
-      width: 640px;
-      height: 360px;
-    }
+https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/
 
-    #overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: 10; /* This will make the iframe unclickable */
-    }
 
-    button {
-      margin: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div id="videoContainer">
-    <div id="player"></div>
-    <div id="overlay"></div>
-  </div>
 
-  <button onclick="playVideo()">Play</button>
-  <button onclick="stopVideo()">Stop</button>
-  <button onclick="pauseVideo()">Pause</button>
-  <button onclick="setSpeed(1.5)">1.5x Speed</button>
-  <button onclick="setSpeed(1)">Normal Speed</button>
-  <button onclick="getCurrentTime()">Show Current Time</button>
-  <button onclick="seekTo()">Move to !!!!</button>
-  
 
-  <script src="https://www.youtube.com/iframe_api"></script>
 
-  <script>
-    var player;
-
-    // This function creates an iframe and YouTube player after the API code downloads.
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '360',
-        width: '640',
-        videoId: 'o-h-pMF4wpg',  // Replace with your video ID
-        playerVars: {
-          'controls': 0,           // Disable native controls
-          'modestbranding': 1,     // Remove YouTube logo
-          'rel': 0,                // Disable related videos at the end
-          'showinfo': 0            // Hide video title info
-        },
-        events: {
-          'onReady': onPlayerReady
-        }
-      });
-    }
-
-    function onPlayerReady(event) {
-      console.log("Player is ready.");
-    }
-
-    function playVideo() {
-      player.playVideo();
-    }
-
-    function stopVideo() {
-      player.stopVideo();
-    }
-
-    function pauseVideo() {
-      player.pauseVideo();
-    }
-
-    function setSpeed(speed) {
-      player.setPlaybackRate(speed);
-    }
-
-    function getCurrentTime() {
-      alert("Current Time: " + player.getCurrentTime() + " seconds");
-    }
-    function minutesToSeconds(minutes) {
-  return minutes * 60;
-}
-    function seekTo() {
-        var where = minutesToSeconds(parseFloat(prompt("where in minutes")))
-
-        player.seekTo(where, true);  // Seek to a specific time (in seconds)
-    }
-  </script>
-</body>
-</html>
+#!/bin/bash
+echo " Hi, Happy Debuging :) ..."
+sleep 1
+sudo yum groupinstall -y "Development Tools"
+sudo yum install -y ncurses-devel
+sudo yum install -y qt3-devel
+sudo yum install -y vim
+sudo yum install -y kernel-devel
+sudo yum install -y hmaccalc
+sudo yum install -y zlib-devel
+sudo yum install -y binutils-devel
+sudo yum install -y elfutils-libelf-devel
+sudo yum install -y asciidoc
+sudo yum install -y audit-libs-devel
+sudo yum install -y bash
+sudo yum install -y bc
+sudo yum install -y binutils
+sudo yum install -y binutils-devel
+sudo yum install -y bison
+sudo yum install -y diffutils
+sudo yum install -y elfutils
+sudo yum install -y elfutils-devel
+sudo yum install -y elfutils-libelf-devel
+sudo yum install -y findutils
+sudo yum install -y flex
+sudo yum install -y gawk
+sudo yum install -y gcc
+sudo yum install -y gettext
+sudo yum install -y gzip
+sudo yum install -y hmaccalc
+sudo yum install -y hostname
+sudo yum install -y java-devel
+sudo yum install -y m4
+sudo yum install -y make
+sudo yum install -y module-init-tools
+sudo yum install -y ncurses-devel
+sudo yum install -y net-tools
+sudo yum install -y newt-devel
+sudo yum install -y numactl-devel
+sudo yum install -y openssl
+sudo yum install -y patch
+sudo yum install -y pciutils-devel
+sudo yum install -y perl
+sudo yum install -y perl-ExtUtils-Embed
+sudo yum install -y pesign
+sudo yum install -y python-devel
+sudo yum install -y python-docutils
+sudo yum install -y redhat-rpm-config
+sudo yum install -y rpm-build
+sudo yum install -y sh-utils
+sudo yum install -y tar
+sudo yum install -y xmlto
+sudo yum install -y xz
+sudo yum install -y zlib-devel
+sudo yum install -y "kernel-devel-uname-r == $(uname -r)"
+sudo yum install -y libtool
+sudo yum install -y byacc
+sudo yum install -y gcc
+sudo yum install -y sysstat
